@@ -1,0 +1,23 @@
+uuid: 9ec88b91-0b81-44b9-a7e2-083ceff373ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popularity
+    - node.type.artist
+id: node.artist.field_popularity
+field_name: field_popularity
+entity_type: node
+bundle: artist
+label: popularity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

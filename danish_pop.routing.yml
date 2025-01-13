@@ -1,0 +1,31 @@
+danish_pop.settings:
+  path: '/admin/config/danish_pop'
+  defaults:
+    _form: '\Drupal\danish_pop\Form\SpotifyConfigForm'
+    _title: 'Spotify Now Playing Settings'
+  requirements:
+    _permission: 'administer spotify settings'
+
+danish_pop.endpoint:
+  path: '/danish_pop'
+  defaults:
+    _controller: '\Drupal\danish_pop\Controller\SpotifyController::content'
+    _title: 'Spotify Now Playing'
+  requirements:
+    _permission: 'access content'
+
+danish_pop.artistsync:
+  path: '/artist-data-sync'
+  defaults: 
+    _controller: '\Drupal\danish_pop\Controller\ArtistController::artistsync'
+    _title: 'Sync Artist Data'
+  requirements:
+    _permission: 'access content'
+
+danish_pop.artistadd:
+  path: '/admin/config/artist_add'
+  defaults:
+    _form: '\Drupal\danish_pop\Form\ArtistAddForm'
+    _title: 'Add new artist from Spotify'
+  requirements:
+    _permission: 'administer spotify settings'

@@ -1,0 +1,23 @@
+uuid: b0c48deb-9503-49a4-86f0-298594f0c8e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_followers
+    - node.type.artist
+id: node.artist.field_followers
+field_name: field_followers
+entity_type: node
+bundle: artist
+label: Followers
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

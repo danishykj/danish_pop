@@ -1,0 +1,9 @@
+uuid: 4cb5267d-b6d4-4c11-91a4-5bf1871638ca
+langcode: en
+status: true
+dependencies: {  }
+name: Genres
+vid: genres
+description: 'This is the genres of the Artist'
+weight: 0
+new_revision: false

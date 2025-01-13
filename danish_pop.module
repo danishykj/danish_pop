@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Module file for alter hooks in the custom module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_theme() to for node templates.
+ */
+function danish_pop_theme($existing, $type, $theme, $path) {
+  return [
+    'node__artist__full' => [
+      'template' => 'node--artist--full',
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_help() for helping the module user.
+ */
+function danish_pop_help($route_name, RouteMatchInterface $route_match) {
+
+  switch ($route_name) {
+
+    case 'danish_pop.settings':
+      return '<p>' .
+                    t('You will need to create a new application on the 
+					Spotify Developer site (<a href="https://developer.spotify.com/" target="_blank">https://developer.spotify.com/</a>). <br /> 
+					Copy the Client ID and Client Secret from the App settings', []) . '</p>';
+
+  }
+
+}
+
+/**
+ * Cron callback function to import the artist data.
+ */
+function danish_pop_artist_sync_job() {
+  $output = "The cron for the artist data sync ran..";
+
+  \Drupal::logger("danish_pop")->notice($output);
+  $url = Url::fromRoute('danish_pop.artistsync')->toString();
+  $response = new RedirectResponse($url);
+  $response->send();
+
+}
+
+/**
+ * Implements hook_node_access() for disallowing ananomous user access.
+ */
+function danish_pop_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  if ($account->isAnonymous() && $node->gettype() == 'artist') {
+    return AccessResult::forbidden()->cachePerPermissions();
+  }
+  return AccessResult::neutral()->cachePerPermissions();
+}

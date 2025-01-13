@@ -1,0 +1,19 @@
+uuid: 5f1303a6-0979-4c83-aaa2-6d48449ced95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unique_id
+    - node.type.artist
+id: node.artist.field_unique_id
+field_name: field_unique_id
+entity_type: node
+bundle: artist
+label: 'Unique ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

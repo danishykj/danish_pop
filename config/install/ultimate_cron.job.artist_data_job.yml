@@ -1,0 +1,22 @@
+uuid: 854721b2-3de0-4583-98fc-dcdb1279c6e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - danish_pop
+_core:
+  default_config_hash: YQ0fiHU2Wq5iVNfWkxuPIhmAzWc9ubmrJWKYC7ecU6s
+title: 'Adding the artist data'
+id: artist_data_job
+weight: 0
+module: danish_pop
+callback: danish_pop_artist_sync_job
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0 0 * * *'
+launcher:
+  id: serial
+logger:
+  id: database

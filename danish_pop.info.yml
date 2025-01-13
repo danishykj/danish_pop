@@ -1,0 +1,6 @@
+name: 'Spotify Artist Module'
+type: module
+core_version_requirement: ^11
+description: 'Spotify module to show Artist information.'
+dependencies:
+  - drupal:ultimate_cron

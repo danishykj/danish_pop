@@ -1,0 +1,12 @@
+danish_pop.admin:
+  title: 'Spotify Settings'
+  parent: system.admin_config_system
+  menu_name: admin
+  description: 'Spotify Settings Form'
+  route_name: danish_pop.settings
+danish_pop.artistadd:
+  title: 'Artist Adding Form'
+  parent: system.admin_config_system
+  menu_name: admin
+  description: 'Artist Adding Form'
+  route_name: danish_pop.artistadd

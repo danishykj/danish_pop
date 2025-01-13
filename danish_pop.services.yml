@@ -1,0 +1,4 @@
+services:
+  danish_pop.spotify_helper:
+    class: Drupal\danish_pop\SpotifyHelper
+    arguments: ['@config.factory', '@http_client']

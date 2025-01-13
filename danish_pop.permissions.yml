@@ -1,0 +1,3 @@
+'administer spotify settings':
+  title: 'Administer Spotify settings'
+  description: 'Allows administration of the Spotify API configuration settings.'

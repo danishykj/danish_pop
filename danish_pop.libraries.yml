@@ -1,0 +1,4 @@
+block:
+  css:
+    theme:
+      css/danish_pop.css: {}
